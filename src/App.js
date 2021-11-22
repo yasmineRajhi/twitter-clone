@@ -1,19 +1,37 @@
-import {Container, Row, Col} from 'react-bootstrap';
-import RightSideBar from './components/RightSideBar';
-import LeftSideBar from './components/LeftSideBar';
-import NewsFeed from './components/NewsFeed/NewsFeed';
+import { useEffect } from 'react';
+import { Container,Row,Col} from 'react-bootstrap';
+import LeftSideBar from "./components/LeftSideBar/LeftSideBar"
+import { useNavigate } from "react-router-dom";
+import {useState} from "react"
+import MainRouter from './MainRouter';
+import RightSideBar from './components/RightSideBar/RightSideBar';
 function App() {
+  let navigate = useNavigate();
+  let [isAuth,setIsAuth] = useState(false)
+  // logique ithabet el user aandou token fel storage ->yabaathlou lel serveur 
+  useEffect(()=>{
+    // setisAuth(localStorage.getItem("uID")!=null)
+    if (isAuth){
+      navigate("/home")
+    }else{
+        navigate("/login")
+    }
+    console.log("Component mounted");
+  },[isAuth])
   return (
-    <div className="App">
-      <Container fluid>
-        <Row>
-          <Col><LeftSideBar/></Col>
-          <Col sm={6}><NewsFeed/></Col>
-          <Col><RightSideBar/></Col>
-        </Row>
-      </Container>
-        
-    </div>
+        <>
+        <Container fluid p>
+          <Row>
+            {isAuth && <LeftSideBar /> }
+            <Col sm={{span: (isAuth)?6:12  }}>
+              <MainRouter setIsAuth={setIsAuth}/>
+            </Col>
+            {isAuth && <Col sm="3"><RightSideBar /></Col> }
+          </Row>
+        </Container>
+       
+       
+        </> 
   );
 }
 

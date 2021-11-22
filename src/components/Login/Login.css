@@ -1,0 +1,18 @@
+.Login{
+    justify-items: center;
+    justify-content: center;
+}
+
+input{
+    background-color: #F5F8FA;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+input::placeholder{
+    color: #AAB8C2;
+}
+
+a:visited{
+    color: #1DA1F2;
+}

@@ -7,14 +7,15 @@ import {IoIosNotificationsOutline} from 'react-icons/io';
 import {FiMail} from 'react-icons/fi';
 import {BsBookmark} from 'react-icons/bs';
 import {CgProfile,CgMoreO} from 'react-icons/cg';
+import './LeftSideBar.css';
 function LeftSideBar() {
     return (
         <Col>
-            <Container fluid>
-                <Row>
-                    <Col style={{cursor:'pointer',marginTop:'20px'}}><FaTwitter  style={{fontSize:'40px',color:'#00acee',cursor:'pointer'}}/></Col>
+            <Container fluid style={{position: "fixed",zIndex: '1',top: '0',marginLeft:'100px'}}>
+                <Row >
+                    <Col style={{cursor:'pointer',marginTop:'20px'}}><FaTwitter className='Twitter' style={{fontSize:'40px',color:'#00acee',cursor:'pointer'}}/></Col>
                 </Row>
-                <Row style={{marginTop:'20px'}}>
+                <Row className='home' style={{marginTop:'20px'}}>
                     <Col style={{cursor:'pointer'}}><RiHome7Fill style={{fontSize:'30px'}}/>   Home</Col>
                 </Row>
                 <Row style={{marginTop:'20px'}}>
@@ -39,7 +40,7 @@ function LeftSideBar() {
                     <Col style={{cursor:'pointer'}}><CgMoreO style={{fontSize:'30px'}}/>   More</Col>
                 </Row>
                 <Row style={{marginTop:'20px'}}>
-                    <Col ><Button variant="primary" style={{cursor:'pointer', width:'270px', borderRadius:'25px'}}>tweet</Button></Col>
+                    <Col ><Button variant="primary" style={{cursor:'pointer', width:'220px', borderRadius:'25px'}}>tweet</Button></Col>
                 </Row>
                 <Row>
                     <Col style={{cursor:'pointer',marginTop:'25px', display:'flex'}}>

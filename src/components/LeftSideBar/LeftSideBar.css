@@ -1,0 +1,19 @@
+.Twitter{
+    width: 70px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.Twitter:hover{
+    background-color: #DFF2FF;
+    border-radius: 500px;
+}
+
+.home:hover{
+    background-color: #EFEFEF;
+   border-radius: 25px;
+}
+
+.home{
+    width: 160px;
+}
